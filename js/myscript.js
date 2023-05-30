@@ -59,6 +59,15 @@ function startNewGame(){
     for (let index = 0; index < cellsNumber; index++) {
         const newCell = createElement('div','cell '+ cellsClass,
                         `<p>${index + 1}</p>`);
+
+     const isThisABomb = bombsList.includes(index + 1);
+
+     if (isThisABomb){
+     newCell.classList.add('bomb');
+     newCell.innerHTML = '<p><i class="fa-solid fa-bomb"></i></p>';
+     }
+
+
         newCell.addEventListener('click', function(){
             console.log(index + 1);
             this.classList.toggle('active'); // this === newCell
