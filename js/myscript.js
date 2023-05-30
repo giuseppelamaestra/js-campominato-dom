@@ -69,3 +69,19 @@ function startNewGame(){
 
 
 
+
+
+
+function getRandomUniqueNumber( minNum, maxNum, elements ){
+    const numbersList = [];
+    if ( (maxNum - minNum) < elements ){
+        return [];
+    }
+    while (numbersList.length < elements){
+        const newRandomNumber = getRandomInt(minNum, maxNum);
+        if (!numbersList.includes(newRandomNumber)){
+            numbersList.push(newRandomNumber);
+        }
+    }
+    return numbersList;
+}
