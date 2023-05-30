@@ -22,6 +22,9 @@ playButton.addEventListener(("click"), function(){
 function startNewGame(){
     const gridElement = document.querySelector('div.grid');
     const level = parseInt(document.getElementById('level-select').value);
+    const outputBanner = document.querySelector('h2.info-banner');
+
+    
     let cellsNumber = 0;
     let cellsClass;
     if (level === 0){
